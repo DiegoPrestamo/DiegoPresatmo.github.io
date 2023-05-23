@@ -30,7 +30,7 @@ This is a V-REP scene which I have annotated. I have only highlighted very basic
 
 - The underlined portion is where you have simple controls such as panning in and out, translations in X, Y, Z, rotations about Alpha, Beta, Gamma, and other basic controls. If you want to make a fine tune translation (which are often required, since the regular translation step can be quite large), press **_shift_** while you translate.
 
-- The arrow points to the **_Scene Object Properties_**, an incredibly useful element for fine tuning and specifying how your object will behave in the scene. Here you can change physical properties, dynamic properties, and many other properties.
+- The arrow points to the **_Scene Object Properties_**, an incredibly useful element for specifying how your object will behave in the scene. Here you can change physical properties, dynamic properties, and many other properties.
 
 - The **_Hierarchy_** is where you can see all of the object in the scene and how they relate to each other. If an object is indented under another object, they move together or are related in some way.
 <div align="center">

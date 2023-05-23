@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Introduction to Poppy Torso using V-REP / CoppeliaSim
+title: Introduction to Poppy Humanoid using V-REP / CoppeliaSim
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+# We will be going over the introductory steps to connect a poppy humanoid to V-REP and controlling it using the pypot library
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 

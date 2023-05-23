@@ -3,8 +3,10 @@ layout: post
 title: Introduction to Poppy Humanoid using V-REP / CoppeliaSim
 ---
 
-# We will be going over the introductory steps to connect a poppy humanoid to V-REP and controlling it using the pypot library
+### The Poppy Project is an open-source platform that intertwines science, technology, art, and education. The Poppy Humanoid is the flagship model of the Poppy Project. Standing at 83 cm tall, the Poppy Humanoid is almost fully 3D printed and uses 25 motors to animate its body. These features make the Poppy Humanoid a cheaper alternative in the world of complex robotic systems. However, $10,000 is still far too much for (most) 21 year-old college students, so I decided to explore the Poppy Humanoid using V-REP, which is now Coppelia Sim.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+![Poppy Humanoid Skating](https://www.poppy-project.org/assets/img/humanoid-skating.jpg)
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+
+#### Brief introduction of V-REP and Poppy: 
+##### V-REP which is now known as Coppelia Sim is a powerful robotics simulator that allows you to import or create various robots, program them as you would in real life, and simulate them visually and numerically. 

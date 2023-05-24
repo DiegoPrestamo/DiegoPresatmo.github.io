@@ -147,7 +147,7 @@ Now you can add various peripherals in this scene which you will be able to simu
 - Go to the Menu bar and click **Add**
 - Under **Vision sensor** select **Perspective type**. The **Perspective type** vision sensor has a triangular field of view similar to our eyes, the **Orthographic type** projects in a rectangular fashion.
 - Go to **Object/item position/orientation**. Under **Position/Translation** change the y-position to **-0.035 m**, the z-position to **0.8 m**, and leave the x-position alone. Then go to the **Orientation/Rotations** and change alpha to **90 deg**
-![GIF demonstration could not load!](https://im3.ezgif.com/tmp/ezgif-3-345c2e8240.gif)
+![GIF demonstration could not load!](https://i.imgur.com/yydH6b3.gif)
 
 #### Step 2.5: Connect the Vision Sensor to Poppy's head visual
 If we do not do this step, it is as if the vision sensor and Poppy's head just happen to be at the same place at once. By dragging the vision sensor and dropping it to Poppy's **head_visiual** we are effectively connecting the vision sensor to the head like we would expect
@@ -227,7 +227,10 @@ time.sleep(1)
 
 poppy.close()
 ```
+The behavior should look like this:
+![GIF demonstration could not load!](https://i.imgur.com/SIfJufW.gif)
 
+We have came a long way from the beginning. You should feel good about yourself. If you spot an error (typo, code, anything really) shoot me an email through my **about** page. Keep building!
 
 
 

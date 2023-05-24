@@ -146,7 +146,14 @@ The problem with only using a default Poppy scene is that we cannot use a specif
 Now you can add various peripherals in this scene which you will be able to simulate. Much cooler than a simple default Poppy. Let us add a vision sensor:
 - Go to the Menu bar and click **Add**
 - Under **Vision sensor** select **Perspective type**. The **Perspective type** vision sensor has a triangular field of view similar to our eyes, the **Orthographic type** projects in a rectangular fashion.
+- Go to **Object/item position/orientation**. Under **Position/Translation** change the y-position to **-0.035 m**, the z-position to **0.8 m**, and leave the x-position alone. Then go to the **Orientation/Rotations** and change alpha to **90 deg**
 ![GIF demonstration could not load!](vrep_XNmoSsfPcT.gif)
+
+#### Step 2.5: Connect the Vision Sensor to Poppy's head visual
+If we do not do this step, it is as if the vision sensor and Poppy's head just happen to be at the same place at once. By dragging the vision sensor and dropping it to Poppy's **head_visiual** we are effectively connecting the vision sensor to the head like we would expect
+![GIF demonstration could not load!](vrep_XNmoSsfPcT.gif](https://i.imgur.com/FnvzLlL.gif)
+
+
 
 
 

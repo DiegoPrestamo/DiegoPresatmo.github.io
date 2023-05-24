@@ -50,7 +50,7 @@ pip install pypot poppy_humanoid
 As a sanity check, run the following lines of code in your Command Prompt / Terminal
 ```bash
 from pypot.vrep import from_vrep
-from poppy.creatures import PoppyHumanoid
+from pypot.creatures import PoppyHumanoid
 ```
 If they run with no issues, you are likely okay. Else, troubleshoot using [this](https://docs.poppy-project.org/en/installation/install-poppy-softwares.html) and [that](https://notebook.community/matthieu-lapeyre/pypot/samples/notebooks/Controlling%20a%20Poppy%20humanoid%20in%20V-REP%20using%20pypot).
 
@@ -63,6 +63,7 @@ vrep_port = 19997
 poppy = PoppyHumanoid(simulator='vrep', port = vrep_port)
 ```
 If you are having errors connecting to V-REP, open _**remoteApiConnections.txt**_ file which is in the V-REP path location
+<div align="center">
   <p>
     <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/732e5253-6e01-4679-85b4-d49d6d34d924" width="800">
   </p>
@@ -159,12 +160,11 @@ If we do not do this step, it is as if the vision sensor and Poppy's head just h
 Let us put something in front of the camera just to make sure we have everything working. We will add a cuboid and put it right in front of Poppy's face.
 - Go to the Menu bar and click **Add**
 - Select **Cuboid** under **Primitive shape**
-- Move the cuboid to be right in Poppy's face
-- Change the y-position to **- 0.75** this should be right outside of Poppy's vision sensor volume
+- Use **Object position** controls to place the cuboid in Poppy's field of view
 ![image](https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/fe80be1b-e775-4f01-9cc8-87425f395b4a)
 
-#### Step 3.5 Make sure the object is renderable and still! 
-Do not expect something to render on the vision sensor's view (next step) if you did not make it renderable. 
+#### Step 3.5 Make sure the object is renderable and floating 
+Do not expect something to render on the vision sensor view (next step) if you did not make it renderable. 
 Under **Scene Object Properties** hit the **renderable** box:
 <div align="center">
   <p>
@@ -174,7 +174,6 @@ Under **Scene Object Properties** hit the **renderable** box:
 </div>
 
 While you are at it, go to **Show dynamic properties dialog** and uncheck **Body is dynamic**. That way the cube will float instead of falling with gravity.
-![image](https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/9bc5fa5e-4d50-4a38-b55c-204b1ff8f7bf)
   <p>
     <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/9bc5fa5e-4d50-4a38-b55c-204b1ff8f7bf" width="800">
   </p>

@@ -142,6 +142,11 @@ The problem with only using a default Poppy scene is that we cannot use a specif
 ## Step 1: Save a default Poppy scene as a specific '.ttt' file in a specific file path that you will keep handy for the next steps
 ![GIF demonstration could not load!](https://i.imgur.com/t2V503v.gif)
 
+## Step 2: Get creative
+Now you can add various peripherals in this scene which you will be able to simulate. Much cooler than a simple default Poppy. Let us add a vision sensor:
+- Go to the Menu bar and click **Add**
+- Under **Vision sensor** select **Perspective type**. The **Perspective type** vision sensor has a triangular field of view similar to our eyes, the **Orthographic type** projects in a rectangular fashion.
+![GIF demonstration could not load!](vrep_XNmoSsfPcT.gif)
 
 
 

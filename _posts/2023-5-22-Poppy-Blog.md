@@ -39,7 +39,7 @@ This is a V-REP scene which I have annotated. I have only highlighted very basic
   <p>
     <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/5178c4fb-956f-46d5-b676-7f1169e221f6" width="800">
   </p>
-     A Poppy Torso + computer vision scene I am currently working on
+     A Poppy Torso in the V-REP scene
 </div>
 
 ## Step 3: Downloading Appropriate Libraries (following standard documentation)

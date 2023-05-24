@@ -132,7 +132,7 @@ poppy.close()
 ```
 And the movement should look something like this: 
 
-![Optional text that will serve as alt text if the GIF doesn't load](C:\Users\prest\OneDrive\Documents\ShareX\Screenshots\2023-05)
+![Optional text that will serve as alt text if the GIF doesn't load](https://i.imgur.com/eHOg7uk.gif)
 
 
 

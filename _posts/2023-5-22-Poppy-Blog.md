@@ -152,6 +152,44 @@ Now you can add various peripherals in this scene which you will be able to simu
 #### Step 2.5: Connect the Vision Sensor to Poppy's head visual
 If we do not do this step, it is as if the vision sensor and Poppy's head just happen to be at the same place at once. By dragging the vision sensor and dropping it to Poppy's **head_visiual** we are effectively connecting the vision sensor to the head like we would expect
 ![GIF demonstration could not load!](https://i.imgur.com/FnvzLlL.gif)
+* Not shown: Change resolution to 1080 / 1080 or anything that is not the treacherous default 32 / 32 
+* Make sure to save your scene anytime you make changes or they will not show up next time you run the scene
+
+## Step 3: Add a renderable object in the field of view:
+Let us put something in front of the camera just to make sure we have everything working. We will add a cuboid and put it right in front of Poppy's face.
+- Go to the Menu bar and click **Add**
+- Select **Cuboid** under **Primitive shape**
+- Move the cuboid to be right in Poppy's face
+- Change the y-position to **- 0.75** this should be right outside of Poppy's vision sensor volume
+![image](https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/fe80be1b-e775-4f01-9cc8-87425f395b4a)
+
+#### Step 3.5 Make sure the object is renderable and still! 
+Do not expect something to render on the vision sensor's view (next step) if you did not make it renderable. 
+Under **Scene Object Properties** hit the **renderable** box:
+<div align="center">
+  <p>
+    <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/1ceba361-8a78-45ad-a9a1-3647502161e1" width="800">
+  </p>
+  The **Scene Object Properties** is the magnifying glass which I drew the arrow to at the beginning
+</div>
+While you are at it, go to **Show dynamic properties dialog** and uncheck **Body is dynamic**. That way the cube will float instead of falling with gravity.
+![image](https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/9bc5fa5e-4d50-4a38-b55c-204b1ff8f7bf)
+  <p>
+    <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/9bc5fa5e-4d50-4a38-b55c-204b1ff8f7bf" width="800">
+  </p>
+## Step 4: Insert a floating view and associate it with the vision sensor
+It is nice to be able to see what the vision sensor is seeing. Let us add a floating view to do just that.
+ - Right click anywhere in the scene (another way to access the menu)
+ - Hover over to **Add** --> **Floating View**
+ - In the **Hierarchy** select your vision sensor
+ - Right click the floating view --> **view** --> **associate view with selected vision sensor**
+ - Run your scene and you should see what the vision sensor is seeing
+![GIF demonstration could not load!](https://i.imgur.com/N5JSYmM.gif)
+
+## Step 5: Control this specific scene using a Python script
+We have now created a specific scene which we would like to experiment with. We do not want to simply run a default scene. Let us modify our Python script to communicate directly with the scene we have just created.
+
+
 
 
 

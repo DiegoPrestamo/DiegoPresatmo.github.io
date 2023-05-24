@@ -140,7 +140,7 @@ You now have a version of a Poppy Humanoid that you can control in quite a simil
 The problem with only using a default Poppy scene is that we cannot use a specific scene that we have modified unless we want to manually program everything into our script (which might be a legitimate alternative, just not one that I have explored). For example, if I want to attach a vision sensor to Poppy's forehead, I must create that in a scene, so loading a default every time will not help us.
 
 ## Step 1: Save a default Poppy scene as a specific '.ttt' file in a specific file path that you will keep handy for the next steps
-[GIF demonstration could not load!](https://i.imgur.com/t2V503v.gif)
+![GIF demonstration could not load!](https://i.imgur.com/t2V503v.gif)
 
 
 

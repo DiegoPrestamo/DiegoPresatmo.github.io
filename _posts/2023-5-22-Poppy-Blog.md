@@ -143,7 +143,7 @@ The problem with only using a default Poppy scene is that we cannot use a specif
 ![GIF demonstration could not load!](https://i.imgur.com/t2V503v.gif)
 
 ## Step 2: Get creative
-Now you can add various peripherals in this scene which you will be able to simulate. Much cooler than a simple default Poppy. Let us add a vision sensor:
+Now you can add various peripherals and simulate them. Much cooler than a simple default Poppy. Let us add a vision sensor:
 - Go to the Menu bar and click **Add**
 - Under **Vision sensor** select **Perspective type**. The **Perspective type** vision sensor has a triangular field of view similar to our eyes, the **Orthographic type** projects in a rectangular fashion.
 - Go to **Object/item position/orientation**. Under **Position/Translation** change the y-position to **-0.035 m**, the z-position to **0.8 m**, and leave the x-position alone. Then go to the **Orientation/Rotations** and change alpha to **90 deg**

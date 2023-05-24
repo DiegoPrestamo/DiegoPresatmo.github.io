@@ -94,7 +94,7 @@ Here is a simple script that moves various joints. These are the basic ways to c
 ```bash 
 from pypot.creatures import PoppyHumanoid
 
-vrep_port = 19990
+vrep_port = 19990 # your port will likely be 19997 since I specifically changed mine which I menioned earlier
 
 
 poppy = PoppyHumanoid(simulator='vrep', port = vrep_port)
@@ -172,11 +172,13 @@ Under **Scene Object Properties** hit the **renderable** box:
   </p>
   The **Scene Object Properties** is the magnifying glass which I drew the arrow to at the beginning
 </div>
+
 While you are at it, go to **Show dynamic properties dialog** and uncheck **Body is dynamic**. That way the cube will float instead of falling with gravity.
 ![image](https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/9bc5fa5e-4d50-4a38-b55c-204b1ff8f7bf)
   <p>
     <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/9bc5fa5e-4d50-4a38-b55c-204b1ff8f7bf" width="800">
   </p>
+  
 ## Step 4: Insert a floating view and associate it with the vision sensor
 It is nice to be able to see what the vision sensor is seeing. Let us add a floating view to do just that.
  - Right click anywhere in the scene (another way to access the menu)
@@ -186,8 +188,45 @@ It is nice to be able to see what the vision sensor is seeing. Let us add a floa
  - Run your scene and you should see what the vision sensor is seeing
 ![GIF demonstration could not load!](https://i.imgur.com/N5JSYmM.gif)
 
-## Step 5: Control this specific scene using a Python script
-We have now created a specific scene which we would like to experiment with. We do not want to simply run a default scene. Let us modify our Python script to communicate directly with the scene we have just created.
+## Step 5: Copy and paste API files in our path
+We will need to fetch three files from the V-REP file location and place them in the same path as our current scene
+- Sim.py - Found in **_pycache_** file
+- simConst.py - Found in **_pycache_** file
+- remoteApi.dll - Found in **programming** --> **remoteApiBindings** --> **lib** --> **lib** --> choose 64 bit or 32 bit --> remoteApi.dll
+<div align="center">
+  <p>
+    <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/assets/103367642/c0dcdbae-4348-4bd2-9485-c19fd9980e18" width="800">
+  </p>
+  This is my path for the _poppy_humanoid_ file we are working with
+</div>
+
+## Step 6: Control this specific scene using a Python script
+We have now created a specific scene which we would like to experiment with. We do not want to simply run a default scene. Let us write a Python script to communicate directly with the scene we have just created. The important lesson from this script is the manner in which we are communicating with V-REP.
+```bash
+from pypot.creatures import PoppyHumanoid
+from pypot.vrep.controller import VrepController
+import time
+
+# the path to where you have your Poppy scene saved... this is mine and yours should be different
+scene_path = r"C:\Users\prest\OneDrive\Documents\Poppy Research\poppy_humanoid.ttt"
+
+# the new way we will connect to V-REP
+vrep_host = '127.0.0.1'  # the IP address
+vrep_port = 19990  # same port from earlier... again yours will probably be 1997
+vrep_scene = scene_path
+
+poppy = PoppyHumanoid(simulator='vrep', scene=vrep_scene, host=vrep_host, port=vrep_port)
+
+# head movement to pan around scene
+poppy.head_z.goal_position = 60
+time.sleep(1)
+poppy.head_z.goal_position = -60
+time.sleep(1)
+poppy.head_z.goal_position = 0
+time.sleep(1)
+
+poppy.close()
+```
 
 
 

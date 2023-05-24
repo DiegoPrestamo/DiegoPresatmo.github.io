@@ -230,7 +230,7 @@ poppy.close()
 The behavior should look like this:
 ![GIF demonstration could not load!](https://i.imgur.com/SIfJufW.gif)
 
-We have came a long way from the beginning. You should feel good about yourself. If you spot an error (typo, code, anything really) shoot me an email through my **about** page. Keep building!
+We have gone far. You should feel good about yourself. If you spot an error (typo, code, anything really) or are stuck on something shoot me an email through my **about** page. Keep building!
 
 
 

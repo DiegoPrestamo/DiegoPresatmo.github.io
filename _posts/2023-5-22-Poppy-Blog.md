@@ -151,7 +151,7 @@ Now you can add various peripherals in this scene which you will be able to simu
 
 #### Step 2.5: Connect the Vision Sensor to Poppy's head visual
 If we do not do this step, it is as if the vision sensor and Poppy's head just happen to be at the same place at once. By dragging the vision sensor and dropping it to Poppy's **head_visiual** we are effectively connecting the vision sensor to the head like we would expect
-![GIF demonstration could not load!](vrep_XNmoSsfPcT.gif](https://i.imgur.com/FnvzLlL.gif)
+![GIF demonstration could not load!](https://i.imgur.com/FnvzLlL.gif)
 
 
 

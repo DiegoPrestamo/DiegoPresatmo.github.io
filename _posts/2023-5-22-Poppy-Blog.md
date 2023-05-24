@@ -14,7 +14,7 @@ title: Introduction to Poppy Humanoid using V-REP / CoppeliaSim
 ## Brief introduction of V-REP and Poppy: 
 V-REP which is now known as Coppelia Sim is a powerful robotics simulator that allows you to import or create various robots, program them as you would in real life, and simulate them visually and quantitatively. V-REP uses **_Lua_**, a lightweight, high-level, multi-paradigm coding language that is mostly used in embedded systems. The Poppy Humanoid is most commonly programmed in Python with its native **_pypot_** library. Since we want to get as close as possible to working with the real Poppy Humanoid, we will use the Python API support that V-REP comes with. This will save us the hassle of learning **_Lua_** syntax and will make our code almost identical to what we would run on a real-life Poppy Humanoid.
 ## Step 0: Download **_Python_**
-We will be using **_Python_** to run our simple code. I am running 3.8.10, but I believe any Python 3 version should work. If you do not have **_Python_** installed already, go [here](https://www.python.org/downloads/) and follow the instructions.
+We will be using Python to run our simple code. I am running 3.8.10, but I believe any Python 3 version should work. If you do not have Python installed already, go [here](https://www.python.org/downloads/) and follow the instructions.
 ## Step 1: Downloading V-REP for your appropriate OS
 Have you noticed that I keep saying 'V-REP, which is now named Coppelia sim' instead of 'Coppelia sim, formerly known as V-REP'? Indeed we will be using V-REP and not Coppelia Sim. The Poppy documentation specifically states that Windows users should infact not run Coppelia sim but use [V-REP 3.3.0](https://v-rep-pro-edu.software.informer.com/download/) instead. If you are on Linux, you can use the most recent version of Coppelia Sim (last tested with CoppeliaSIM 4.2.0 + python3.6.12 + Ubuntu 20.04). I am using V-REP EDU, since I am a student and do not intend to commercialized any robots (yet!).
 
@@ -134,6 +134,7 @@ poppy.close()
 And the movement should look something like this: 
 
 ![GIF demonstration could not load!](https://i.imgur.com/eHOg7uk.gif)
+Simulating through Python can take a couple of seconds, so don't panic if it does not run right away.
 
 You now have a version of a Poppy Humanoid that you can control in quite a similar fashion to the real thing. Let us take this one step further.
 
@@ -203,7 +204,6 @@ We will need to fetch three files from the V-REP file location and place them in
 We have now created a specific scene which we would like to experiment with. We do not want to simply run a default scene. Let us write a Python script to communicate directly with the scene we have just created. The important lesson from this script is the manner in which we are communicating with V-REP.
 ```bash
 from pypot.creatures import PoppyHumanoid
-from pypot.vrep.controller import VrepController
 import time
 
 # the path to where you have your Poppy scene saved... this is mine and yours should be different

@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Blog post in progress - Arduino Braccio Computer + Vision Project
+title: Blog post in progress - Controlling Robotic Gripper with Computer Vision
 ---
-#### The Arduino Braccio is a customizable, Arduino-compatible robotic arm that replicates the functionality of a human arm with its shoulder, elbow, wrist, and a sophisticated gripper. The Braccio is a great entry level robotic arm, due to its small size, contextually low price, and capabilities. Computer vision (CV) is a field of artificial intelligence that enables computers to interpret and understand visual data from the real world. It uses digital images and videos as input and applies techniques to process, analyze, and understand them, enabling machines to perform tasks such as identifying objects, recognizing faces, navigating autonomous vehicles, or even diagnosing diseases. Recently, I have been obsessing over the overlap between the two and the seemingly limitless possibilities. We will be modifying a gesture volume control script to move the gripper.
+#### The Arduino Braccio is a customizable, Arduino-compatible robotic arm that replicates the functionality of a human arm with its shoulder, elbow, wrist, and a sophisticated gripper. The Braccio is a great entry level robotic arm, due to its small size, contextually low price, and capabilities. 
 ![GIF demonstration could not load!](https://s12.gifyu.com/images/Screen-Recording-2023-05-25-at-01.10.12-PM-1.gif)
 Controlling my Arduino Braccio with my fingers
+
+Computer vision (CV) is a field of artificial intelligence that enables computers to interpret and understand visual data from the real world. It uses digital images and videos as input and applies techniques to process, analyze, and understand them, enabling machines to perform tasks such as identifying objects, recognizing faces, navigating autonomous vehicles, or even diagnosing diseases. Recently, I have been obsessing over the overlap between the two and the seemingly limitless possibilities. We will be modifying a gesture volume control script to move the gripper.
 
 ## What is the point of this?
 Why do I want to create a gripper that mimics human movement? First of all, its pretty cool; I have never charmed a snake but I sense the feeling would be similar. Second and most importantly, I have a fascination with the possibility of creating an intelligent robot, one that can learn from humans. This is distinct to most of our current robots, which are programmed to systematically to perform certain tasks given certain conditions and do not really know what they are doing or why. The intelligent robot I envision needs vision so this project gets me closer to that

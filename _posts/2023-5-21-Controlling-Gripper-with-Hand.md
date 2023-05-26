@@ -16,7 +16,7 @@ Why do I want to create a gripper that mimics human movement? First of all, its 
 ## Downloads: We will mostly be modifying previously existing code
 - If you do not have Python installed already, go [here](https://www.python.org/downloads/) and follow the instructions.
 - Download the [Arduino IDE](https://www.arduino.cc/en/software)
-
+- Make sure you download the Braccio library in Arduino
 
 ## Step 1: Hand Tracking Module
 We will be modifying Murtaza Hassan's gesture volume control project for our needs. It is the perfect base to work off. This is the hand tracking module that makes the gesture volume control project possible. We will save it as **HandTrackingModule.py**
@@ -96,7 +96,7 @@ if __name__ == '__main__':
     main()
 ```
 ## Step 2: Modify gesture volume control
-This is the modified version which fits our needs: 
+This is the modified version which fits our needs. It will communicate to the arduino script in the next step.
 ```bash
 import cv2
 import time
@@ -165,6 +165,71 @@ while True:
 
     cv2.waitKey(1)
 ```
+## Step 3: The Arduino script
+An Arduino is a user-friendly, open-source electronic platform that allows anyone to create interactive hardware projects. It's essentially a small computer board that can process inputs from sensors, make decisions based on code, and control various outputs like lights, motors (in our case), or displays. I modified one of the standard Braccio sketches (hence the weird comments which I left for context) to create the following Arduino sketch: 
+```bash
+/*
+  simpleMovements.ino
+
+ This  sketch simpleMovements shows how they move each servo motor of Braccio
+
+ Created on 18 Nov 2015
+ by Andrea Martino
+
+ This example is in the public domain.
+ */
+
+#include <Braccio.h>
+#include <Servo.h>
+
+Servo base;
+Servo shoulder;
+Servo elbow;
+Servo wrist_rot;
+Servo wrist_ver;
+Servo gripper;
+
+void setup() {
+  //Initialization functions and set up the initial position for Braccio
+  //All the servo motors will be positioned in the "safety" position:
+  //Base (M1):90 degrees
+  //Shoulder (M2): 45 degrees
+  //Elbow (M3): 180 degrees
+  //Wrist vertical (M4): 180 degrees
+  //Wrist rotation (M5): 90 degrees
+  //gripper (M6): 10 degrees
+  Braccio.begin();
+  Serial.begin(9600); // Set up serial communication at 9600bps
+}
+
+void loop() {
+  int angle = 73;  // Default angle for gripper
+  if (Serial.available()) {  // If data is available to read
+    angle = Serial.parseInt(); // Read it and store it in 'angle'
+  }
+
+  /*
+   Step Delay: a milliseconds delay between the movement of each servo.  Allowed values from 10 to 30 msec.
+   M1=base degrees. Allowed values from 0 to 180 degrees
+   M2=shoulder degrees. Allowed values from 15 to 165 degrees
+   M3=elbow degrees. Allowed values from 0 to 180 degrees
+   M4=wrist vertical degrees. Allowed values from 0 to 180 degrees
+   M5=wrist rotation degrees. Allowed values from 0 to 180 degrees
+   M6=gripper degrees. Allowed values from 10 to 73 degrees. 10: the toungue is open, 73: the gripper is closed.
+  */
+
+                       //(step delay, M1, M2, M3, M4, M5, M6);
+  Braccio.ServoMovement(20,           0,  15, 180, 170, 0,  angle);  
+
+
+}
+```
+## Step 4: Flash the Arduino sketch onto the arduino that you have attached to the Braccio shield
+Hit **Upload** on the Aruino sketch to flash it onto the Uno. Once you do, it will move a bit to settle into position and it will run indefinitely waiting for serial data to come in. The serial data will be coming in from the Python script once we run it.
+
+## Step 5: Run the Python script
+Once the Arduino is flashed, we can proceed to the Python script. We will now run it and control the movement of the gripper with our thumb and index finger.
+
 
 
 

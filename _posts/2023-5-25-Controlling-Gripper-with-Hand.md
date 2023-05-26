@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Blog post in progress - Controlling Robotic Gripper with Computer Vision
+title: Controlling Robotic Gripper with Computer Vision
 ---
 #### The Arduino Braccio is a customizable, Arduino-compatible robotic arm that replicates the functionality of a human arm with its shoulder, elbow, wrist, and a sophisticated gripper. The Braccio is a great entry level robotic arm, due to its small size, contextually low price, and capabilities. 
 ![GIF demonstration could not load!](https://s12.gifyu.com/images/Screen-Recording-2023-05-25-at-01.10.12-PM-1.gif)

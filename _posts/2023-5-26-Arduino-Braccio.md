@@ -1,5 +1,5 @@
 ---
 layout: post
-title: Coming Soon! - Arduino Braccio Computer Vision Block Identifier
+title: Coming Soon! - Making a PID controller from scratch
 ---
 

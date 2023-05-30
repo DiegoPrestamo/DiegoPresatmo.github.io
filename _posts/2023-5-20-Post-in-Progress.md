@@ -7,7 +7,7 @@ title: Making a Differential Drive Robot Simulator
 
 <div align="center">
   <p>
-    <img src="https://p54.f0.n0.cdn.getcloudapp.com/items/X6u7WlnP/946209e9-9544-46e5-8480-f5821e4e5af8.gif?source=viewer&v=33f4c17f3843a5cd577129dd440eb80c" width="800">
+    <img src="https://p54.f0.n0.cdn.getcloudapp.com/items/KouEz7xN/819479fa-c267-49d5-abb0-f34333b927f5.gif?v=bad6cf72c9690eecce8423a22576f2ab" width="800">
   </p>
      DDR simulator we will create (GIF format worsens frame rate, real sim is smoother)
 </div>

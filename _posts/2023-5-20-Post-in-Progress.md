@@ -33,14 +33,21 @@ In contrast, the global frame situates the DDR in a broader xy-plane, where its 
 Now to the good stuff. Given that we are dealing with two distinct reference frames — global and local — we will use two separate motion models. If this ever gets fuzzy, just remember that we are primarily focusing on two simple concepts: linear velocity and angular velocity. Linear velocity refers to the derivative of position with respect to time, while angular velocity corresponds to the derivative of angular displacement with respect to time.
 #### local frame: linear velocity
 Linear velocity in the local frame is quite simple. We have no y-component since wheels do not slide and the z-axis is where we rotate, meaning our linear velocity is always in the x-direction. Say we have a path $\large \gamma(s)$, the linear velocity can be modeled as: 
-<div align="center">
-  <p>
+ <div align="center">
+ <p>
 <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/body_linear_velocity.png?raw=true" width="200">
   </p>
-  Linear velocity is always tangent to the curve $\large \gamma$
 </div>
+
+The linear velocity is tangent to the path $\large \gamma$
+
 #### global frame: linear velocity
-Linear velocity in the global frame is only slightly more complex. We will now take $\lage \theta$ under consideration to find our velocity:
-
-
+Linear velocity in the global frame is only slightly more complex. We will now take $\large \theta$ under consideration to find our velocity: 
+<div align="center">
+  <p>
+    <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/global_linear_velocity.png?raw=true" width="300">
+  </p>
+  </div>
+  
+   The heading of our DDR is in the direction of $\large \theta$. hence, our x and y components of our linear velocity are in terms of $\large \cos(\theta)$ and $\large \sin(\theta)$.
 

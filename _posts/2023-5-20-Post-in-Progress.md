@@ -64,5 +64,5 @@ It is common to combine angular velocity and linear velocity into one vector. Ou
 </div>
 
 ## Creating a Simulator:
-  Although there are plenty of complex tools we can use to model various DDR's, let us create one of our own. We will be using the pygame library to 
+  Although there are plenty of complex tools we can use to model various DDR's, let us create one of our own. We will be using the pygame library to make our simulator.
   

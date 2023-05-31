@@ -45,7 +45,7 @@ The linear velocity is tangent to the path $\large \gamma$
 Linear velocity in the global frame is only slightly more complex. We will now take $\large \theta$ under consideration to find our velocity: 
 <div align="center">
   <p>
-    <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/global_linear_velocity.png?raw=true" width="300">
+    <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/global_linear_velocity.png?raw=true" width="500">
   </p>
   </div>
   

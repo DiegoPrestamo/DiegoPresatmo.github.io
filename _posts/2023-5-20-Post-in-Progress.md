@@ -19,7 +19,7 @@ In the context of DDR, a forward kinematic model would use user inputs of linear
 
 
 ## Global and Local Reference Frames:
-Before we discuss motion models, it's important to consider the context in which we're referring to these models. The local frame (also known as the body frame) situates the DDR in its own xyz-plane. In this frame, the linear velocity is in the x-direction, rotation occurs around the z-axis, and the y-coordinate is always zero. The displacement of the DDR isn't taken into consideration in the local frame.
+Before we discuss motion models, it's important to consider the context in which we're referring to these models. The local frame (also known as the body frame) situates the DDR in its own xyz-plane. In this frame, the linear velocity is in the x-direction, rotation occurs about the z-axis, and the y-coordinate is always zero. The displacement of the DDR isn't taken into consideration in the local frame.
 
 In contrast, the global frame situates the DDR in a broader xy-plane, where its movements are relative to its environment. For example, if we place two DDRs in a field and aim to avoid a collision, we need to use a global frame to track their positions. A local frame would only provide information for each robot in isolation, and wouldn't account for their relative positions in the shared environment.
 <div align="center">
@@ -31,23 +31,35 @@ In contrast, the global frame situates the DDR in a broader xy-plane, where its 
   
 ## Motion Models:  
 Now to the good stuff. Given that we are dealing with two distinct reference frames — global and local — we will use two separate motion models. If this ever gets fuzzy, just remember that we are primarily focusing on two simple concepts: linear velocity and angular velocity. Linear velocity refers to the derivative of position with respect to time, while angular velocity corresponds to the derivative of angular displacement with respect to time.
-#### local frame: linear velocity
+### Local frame: linear velocity
 Linear velocity in the local frame is quite simple. We have no y-component since wheels do not slide and the z-axis is where we rotate, meaning our linear velocity is always in the x-direction. Say we have a path $\large \gamma(s)$, the linear velocity can be modeled as: 
  <div align="center">
  <p>
-<img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/body_linear_velocity.png?raw=true" width="200">
+<img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/local_linear_velocity.png?raw=true" width="200">
   </p>
 </div>
 
 The linear velocity is tangent to the path $\large \gamma$
 
-#### global frame: linear velocity
+### Global frame: linear velocity
 Linear velocity in the global frame is only slightly more complex. We will now take $\large \theta$ under consideration to find our velocity: 
 <div align="center">
   <p>
-    <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/global_linear_velocity.png?raw=true" width="500">
+    <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/global_linear_velocity.png?raw=true" width="300">
   </p>
   </div>
   
    The heading of our DDR is in the direction of $\large \theta$. hence, our x and y components of our linear velocity are in terms of $\large \cos(\theta)$ and $\large \sin(\theta)$.
+
+### Angular velocity: 
+To find our angular velocity, $\large \omega$ we will take the time dependent derivative of $\large \theta$. We will refer to it as $\large \dot{\theta}$. In other words: $\large \omega$ = $\large \dot{\theta}$. The DDR rotates about the z-axis in both globally and locally so unlike the linear velocity, we have one value that applies to both reference frames.
+
+### Final model:
+It is common to combine angular velocity and linear velocity into one vector. Our DDR motion model is:
+<div align="center">
+  <p>
+    <img src="../images/local_global_velocity.png" width="300">
+  </p>
+  </div>
+  test...
 

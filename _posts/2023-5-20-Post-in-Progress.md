@@ -32,27 +32,28 @@ In contrast, the global frame situates the DDR in a broader xy-plane, where its 
 ## Motion Models:  
 Now to the good stuff. Given that we are dealing with two distinct reference frames — global and local — we will use two separate motion models. If this ever gets fuzzy, just remember that we are primarily focusing on two simple concepts: linear velocity and angular velocity. Linear velocity refers to the derivative of position with respect to time, while angular velocity corresponds to the derivative of angular displacement with respect to time.
 ### Local frame: linear velocity
-Linear velocity in the local frame is quite simple. We have no y-component since wheels do not slide and the z-axis is where we rotate, meaning our linear velocity is always in the x-direction. Say we have a path $\large \gamma(s)$, the linear velocity can be modeled as: 
+Linear velocity in the local frame is quite simple. We have no y-component since wheels do not slide and the z-axis is where we rotate, meaning our linear velocity is always in the x-direction. Say we have a path <img src="../images/gamma_latex.png" alt="gamma LaTeX" width="13">(s), the linear velocity can be modeled as: 
  <div align="center">
  <p>
 <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/local_linear_velocity.png?raw=true" width="200">
   </p>
 </div>
 
-The linear velocity is tangent to the path $\large \gamma$
+The linear velocity is tangent to the path <img src="../images/gamma_latex.png" alt="gamma LaTeX" width="13">
 
 ### Global frame: linear velocity
-Linear velocity in the global frame is only slightly more complex. We will now take $\large \theta$ under consideration to find our velocity: 
+Linear velocity in the global frame is only slightly more complex. We will now take <img src="../images/theta_latex.png" alt="theta LaTeX" width="10"> under consideration to find our velocity: 
 <div align="center">
   <p>
     <img src="https://github.com/DiegoPrestamo/DiegoPrestamo.github.io/blob/master/images/global_linear_velocity.png?raw=true" width="300">
   </p>
   </div>
   
-   The heading of our DDR is in the direction of $\large \theta$. hence, our x and y components of our linear velocity are in terms of $\large \cos(\theta)$ and $\large \sin(\theta)$.
+   The heading of our DDR is in the direction of <img src="../images/theta_dot_latex.png" alt="theta dot LaTeX" width="10">. hence, our x and y components of our linear velocity are in terms of cos and sin.
 
 ### Angular velocity: 
-To find our angular velocity, $\large \omega$ we will take the time dependent derivative of $\large \theta$. We will refer to it as $\large \dot{\theta}$. In other words: $\large \omega$ = $\large \dot{\theta}$. The DDR rotates about the z-axis in both globally and locally so unlike the linear velocity, we have one value that applies to both reference frames.
+To find our angular velocity, <img src="../images/omega_latex.png" alt="Omega LaTeX" width="15">
+  we will take the time dependent derivative of <img src="../images/theta_latex.png" alt="theta LaTeX" width="10">. We will refer to it as <img src="../images/theta_dot_latex.png" alt="theta dot LaTeX" width="10">. In other words: <img src="../images/omega_latex.png" alt="Omega LaTeX" width="15"> = <img src="../images/theta_dot_latex.png" alt="theta dot LaTeX" width="10">. The DDR rotates about the z-axis both globally and locally, so unlike the linear velocity we have one value that applies to both reference frames.
 
 ### Final model:
 It is common to combine angular velocity and linear velocity into one vector. Our DDR motion model is:
@@ -60,6 +61,8 @@ It is common to combine angular velocity and linear velocity into one vector. Ou
   <p>
     <img src="../images/local_global_velocity.png" width="300">
   </p>
-  </div>
-  test...
+</div>
 
+## Creating a Simulator:
+  Although there are plenty of complex tools we can use to model various DDR's, let us create one of our own. We will be using the pygame library to 
+  

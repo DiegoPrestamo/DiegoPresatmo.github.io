@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Post in Progress! - Making a Differential Drive Robot Simulator
+title: Making a Differential Drive Robot Simulator
 ---
 
 #### A differential drive robot (DDR) is a type of mobile robot with two, seperately motorized, wheels. We will discuss the motion model for a DDR and make a simple simulator that will help us interact with the motion model.

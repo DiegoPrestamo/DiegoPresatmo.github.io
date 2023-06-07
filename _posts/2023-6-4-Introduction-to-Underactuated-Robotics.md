@@ -5,12 +5,12 @@ tags: [Mathjax, Mathematic]
 mathjax: true
 ---
 ## Underactuated Robotics or: How I learned to Stop Worrying and Love Dynamics
-This week I was emailing back and forth with a professor at Syracuse University when he sent me this ominous link: https://underactuated.csail.mit.edu/
+I was emailing back and forth with a professor in my engineering school when he sent me this ominous link: [https://underactuated.csail.mit.edu/](https://underactuated.csail.mit.edu/)
 
-The link took me to Russ Tedrake's grad level MIT course: *Underactuated Robotics*. I have been completely fascinated by the material for the previous four days and nights. I am documenting my learning as I go along because I know teaching it will force me to becoming proficient in the material. I will introduce the topic and the fundamental ideas you need to get started with the course. Although I knew the math, I had a couple of gaps in my knowledge that I needed to fill before getting started. I will likely update this blog post if I keep finidng additional material I find relevant.
+The link took me to Russ Tedrake's grad level MIT course: *Underactuated Robotics*. I have been completely fascinated by the material since. I am documenting my learning as I go along because I know teaching it will force me to becoming proficient. I will introduce the topic and the fundamental ideas you need to get started with the course. Although I knew the math, I had a couple of gaps in my knowledge that I needed to fill before getting started and if you are in the same position then this may help. I will likely update this blog post if I keep finidng additional material I find relevant.
 
 ## Foreword: 
-Most of the material in this blog post (such as examples, pictures, etc.) is directly from Russ Tedrake's course. I have no idea what the copyright landscape looks like for this but the course notes are published, so I will assume I can safely republish my interpretations of the course material. Send any *Cease and Desist* orders to my email and I will (begrudgingly) surrender.
+Most of the material in this blog post (such as examples, pictures, etc.) is directly from Russ Tedrake's course. I have no idea what the copyright landscape looks like for this but the course notes are published, so I will assume I can safely republish my interpretations of the course material. Please send any *Cease and Desist* orders to my email.
 
 ## There is something off about ASIMO:
 <div align="center">
@@ -26,7 +26,7 @@ But when we look at ASIMO's demo video, there is something wrong with its moveme
 ## Our underactuated world:
 The fundamental reason comes down to dynamics. In order to achieve the desired control, ASIMO is essentially fighting an endless battle against its natural dynamics. Hence the bent knees and slow movements. The idea goes as follows: if we can use feedback to cancel the system's dynamics, the control problem is trivial. The idea has merit and is useful in many settings. Manipulator robots excel in industrial settings where they are bolted down and dynamic cancellation is necessary. Full control all the time. Any desired acceleration can be achieved at any time. 
 
-However, this control ideology begins to hold us down when we get to more complicated control models. I want to prove this to you. Stand up, and take three steps at your normal gait. Now turn around and take three really slow steps, kind of like ASIMO would. I am willing to bet you found the second go harder. Your body was expending much more energy fighting gravity and the movement was surely not too graceful. Although unnatural, this type of movement is very well understood in control theory and is simple as long as you have enough power.
+However, this control ideology begins to hold us down when we get to more complicated control models. I want to prove this to you. Stand up, and take three steps at your normal gait. Now turn around and take three really slow steps, kind of like ASIMO would. I am willing to bet you found the second go harder. Your body was expending much more energy fighting gravity and the movement was surely not too graceful. Although unnatural, this type of movement is very well understood in control theory and is simple as long as you have enough power and have enough actuators to control your degrees of freedom.
 
 The idea of exploiting mechanical systems and riding dynamics prevails in nature. An albatross can fly for kilometers without flapping its wings, a rainbow trout can ride up stream currents simply using their anatomical mechanisms, and a gymnast can do backflips with relative ease.
  <div align="center">
@@ -42,10 +42,10 @@ This type of control occurs when there are less actuators than degrees of freedo
 
 Underactuated robotics does not come from a lack of materials (or research funding), it comes from a desire to maximize the control of our robotics at the trade-off of much more complicated control problems.
 
-Now that we have an intuitive idea of underactuated robotics, let us go into the math.
+Now that we have an intuitive idea of underactuatuation, let us go into the math.
 
 ## Prerequisite Skills:
-Here is what I have found is necessary to stay afloat so far:
+Here is what I have found is necessary so far:
 
 - All of calculus (up to vector / multivariable calculus)
 - Differential Equations
@@ -63,18 +63,18 @@ I found that there were a couple of concepts that I had not been exposed to or u
 - Robotic Manipulation Equation
 - Underactuated vs. Fully-actuated mathematically
 
-Once you understand concepts, the first lecture will make much more sense.
+This should help make sense of the [first lecture](https://www.youtube.com/watch?v=PRaSlUA78gQ&t=3609s&ab_channel=underactuateda). Know that some of my derivations might look slightly different to Prof. Tedrake. I derived Lagrange and Euler-Lagrange slightly differently in terms of structure, but the math should be equivalent. I find it helpful to look at things in different perspectives.
 
 ## Generalized Coordinates:
 Generalized coordinates are parameters used to completely describe the configuration of a system. For our purposes, generalized coordinates might refer to the angles of each join in the robot. The main advantage of generalized coordinates is that they simplify system analysis. Rather than trying to keep track of the position and orientation of every component of the robot in three-dimensional space, you can instead use a smaller number of generalized coordinates that capture the essential degrees of freedom of the system. They are also quite nice because they align with Lagrangian mechanics which will be covered shortly.
 
 ## Principle of Least Action:
-A key concept in Lagrangian and Hamiltonian mechanics, POLA states that the path taken by a system between two states is the one for which the action is minimized. Given the kinetic and potential energy of a robot (expressed in terms of the generalized coordinates and their time derivatives), you can apply the principle of least action and the Euler-Lagrange equation to derive the equations of motion.
+POLA, A key concept in Lagrangian and Hamiltonian mechanics, states that the path taken by a system between two states is the one for which the action is minimized. Given the kinetic and potential energy of a robot (expressed in terms of the generalized coordinates and their time derivatives), you can apply the principle of least action and the Euler-Lagrange equation to derive the equations of motion.
 
 ## Lagrangian / Euler-Lagrange Equation:
-The Lagrangian will provide us a powerful alternative to Newton's laws which are in terms of Forces. It can be very difficult, if not impossible to analyze all the forces in a complex system and the Lagrangian method gives us an elegant way to simplify things,
+The Lagrangian will provide us a powerful alternative to Newton's laws which are in terms of forces. It can be very difficult, if not impossible to analyze all the forces in a complex system and the Lagrangian method gives us an elegant way to simplify things,
 
-$\\ L = T - V\$ 
+$\ L = T - V\$ 
 
 where $\ T$ = kinetic energy and $\ V$ = potential energy. 
 
@@ -85,7 +85,7 @@ where $\ q_i$ are our generalized coordinates.
 
 
 #### Finding equations of motion of a double pendulum using Lagrangian and Euler-Lagrange equation:
-This derivation can take about an hour if you have never done it but I found it useful doing it once and then using software to find the Lagrangian and equations of motion moving forward. I will not go through every step as that would be a LaTex nightmare but if you ever get stuck, follow along [this](https://www.youtube.com/watch?v=KSsZUn0bfwE&ab_channel=PhysicsExplained) video. 
+This derivation can take about an hour if you have never done it but try doing it once and the use software to find the Lagrangian and equations of motion moving forward. I will not go through every step as that would be a LaTex nightmare but if you ever get stuck, follow along [this](https://www.youtube.com/watch?v=KSsZUn0bfwE&ab_channel=PhysicsExplained) video. 
 
  <div align="center">
   <p>
@@ -93,7 +93,7 @@ This derivation can take about an hour if you have never done it but I found it 
   </p>
 </div>   
 
-The location of $\ m_1$ and $\ m_2$ is deoted by $\ p_1$ and $\ p_2$ respectively. We simply use $\ q$ = $$\ \begin{bmatrix} \ \theta_1 , \theta_2 \end{bmatrix}^T $$. We could totally work in terms of $\theta$ but getting used to generalized coordinates can't hurt.
+The location of $\ m_1$ and $\ m_2$ is denoted by $\ p_1$ and $\ p_2$ respectively. We simply use $\ q$ = $$\ \begin{bmatrix} \ \theta_1 , \theta_2 \end{bmatrix}^T $$. We could totally work in terms of $\theta$ but getting used to generalized coordinates cannot hurt.
 
 $\ p_1$:
 

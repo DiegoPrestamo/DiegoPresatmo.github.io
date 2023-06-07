@@ -74,12 +74,12 @@ A key concept in Lagrangian and Hamiltonian mechanics, POLA states that the path
 ## Lagrangian / Euler-Lagrange Equation:
 The Lagrangian will provide us a powerful alternative to Newton's laws which are in terms of Forces. It can be very difficult, if not impossible to analyze all the forces in a complex system and the Lagrangian method gives us an elegant way to simplify things,
 
-$ L = T - V$
+$\ L = T - V$
 
 where $\ T$ = kinetic energy and $\ V$ = potential energy. 
 
 We will then use the Euler-Lagrange equation to find the equations of motion of our system: 
-$\large \frac{\partial L}{\partial q_i} - \frac{d}{dt} \left(\frac{\partial L}{\partial \dot{q}_i}\right)$ = 0
+$$\large \frac{\partial L}{\partial q_i} - \frac{d}{dt} \left(\frac{\partial L}{\partial \dot{q}_i}\right)$$ = 0
 
 where $\ q_i$ are our generalized coordinates. 
 

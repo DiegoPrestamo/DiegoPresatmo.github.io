@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction Material to Underactuated Robotics - MIT 6.832
+title: Introduction Material - MIT 6.832
 tags: [Mathjax, Mathematic]
 mathjax: true
 ---

@@ -7,10 +7,10 @@ mathjax: true
 ## Underactuated Robotics or: How I learned to Stop Worrying and Love Dynamics
 I was emailing back and forth with a professor in my engineering school when he sent me this ominous link: [https://underactuated.csail.mit.edu/](https://underactuated.csail.mit.edu/)
 
-I was taken to Russ Tedrake's grad level MIT course: *Underactuated Robotics*. I have been fascinated by the material since and I am documenting my learning as I wish to explore my own understanding of the material. I will introduce the topic and the fundamental ideas you need to get started with the course. Although I came speaking the math required, I had a couple knowledge gaps that I needed to fill before getting started so if you are in the same position then this may help. I will likely update this blog post if I keep finidng additional material I find relevant.
+I was taken to Russ Tedrake's grad level MIT course: *Underactuated Robotics*. I have been fascinated by the material since and I am documenting my learning as I wish to explore my own understanding of the material. I will introduce the topic and the fundamental ideas you need to get started with the course. I felt pretty good about the math level but there were a couple of concepts I was not familiar with so this may help if you are in the same position. I will likely update this blog post if I keep finidng relevant material.
 
 ## Foreword: 
-Most of the material in this blog post (such as examples, pictures, etc.) is directly from Russ Tedrake's course. I have no idea what the copyright landscape looks like for this but the course notes are published, so I will assume I can safely republish my interpretations of the course material. Please send any *Cease and Desist* orders to my email.
+Most of the material in this blog post (such as examples, pictures, etc.) is directly from Russ Tedrake's online notes and lecture videos. I have no idea what the copyright landscape looks like for this but the notes are published online, so I will assume I can safely republish my interpretations of the course material. Please send any *Cease and Desist* orders to my email.
 
 ## There is something off about ASIMO:
 <div align="center">

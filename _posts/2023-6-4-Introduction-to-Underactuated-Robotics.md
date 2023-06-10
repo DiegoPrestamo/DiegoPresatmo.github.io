@@ -7,7 +7,7 @@ mathjax: true
 ## Underactuated Robotics or: How I learned to Stop Worrying and Love Dynamics
 I was emailing back and forth with a professor in my engineering school when he sent me this ominous link: [https://underactuated.csail.mit.edu/](https://underactuated.csail.mit.edu/)
 
-The link took me to Russ Tedrake's grad level MIT course: *Underactuated Robotics*. I have been completely fascinated by the material since. I am documenting my learning as I go along because I know teaching it will force me to becoming proficient. I will introduce the topic and the fundamental ideas you need to get started with the course. Although I knew the math, I had a couple of gaps in my knowledge that I needed to fill before getting started and if you are in the same position then this may help. I will likely update this blog post if I keep finidng additional material I find relevant.
+I was taken to Russ Tedrake's grad level MIT course: *Underactuated Robotics*. I have been fascinated by the material since and I am documenting my learning as I go along because I know teaching it will force me to becoming proficient. I will introduce the topic and the fundamental ideas you need to get started with the course. Although I came speaking the math required, I had a couple of gaps in my knowledge that I needed to fill before getting started so if you are in the same position then this may help. I will likely update this blog post if I keep finidng additional material I find relevant.
 
 ## Foreword: 
 Most of the material in this blog post (such as examples, pictures, etc.) is directly from Russ Tedrake's course. I have no idea what the copyright landscape looks like for this but the course notes are published, so I will assume I can safely republish my interpretations of the course material. Please send any *Cease and Desist* orders to my email.
@@ -24,9 +24,9 @@ The robotics world was shocked when Honda announced they had been secretely deve
 But when we look at ASIMO's demo video, there is something wrong with its movement. Its just not natural. What is it that makes ASIMO's movement robotic, and [Atlas'](https://www.youtube.com/watch?v=tF4DML7FIWk&ab_channel=BostonDynamics) movement much more human-like?
 
 ## Our underactuated world:
-The fundamental reason comes down to dynamics. In order to achieve the desired control, ASIMO is essentially fighting an endless battle against its natural dynamics. Hence the bent knees and slow movements. The idea goes as follows: if we can use feedback to cancel the system's dynamics, the control problem is trivial. The idea has merit and is useful in many settings. Manipulator robots excel in industrial settings where they are bolted down and dynamic cancellation is necessary. Full control all the time. Any desired acceleration can be achieved at any time. 
+The fundamental reason comes down to dynamics. In order to achieve the desired control, ASIMO is essentially fighting an continous battle against its natural dynamics. Hence the bent knees and slow movements. The idea goes as follows: if we can use feedback to cancel the system's dynamics, the control problem is trivial. The idea has merit and is useful in various domains. Manipulator robots excel in the industrial setting where they are bolted down and dynamic cancellation is necessary. Full control all the time. Any desired acceleration can be achieved at any time. 
 
-However, this control ideology begins to hold us down when we get to more complicated control models. I want to prove this to you. Stand up, and take three steps at your normal gait. Now turn around and take three really slow steps, kind of like ASIMO would. I am willing to bet you found the second go harder. Your body was expending much more energy fighting gravity and the movement was surely not too graceful. Although unnatural, this type of movement is very well understood in control theory and is simple as long as you have enough power and have enough actuators to control your degrees of freedom.
+Unfortunately, this control ideology begins to hold us down when we get to more complicated control models. I want to prove this to you. Stand up, and take three steps at your normal gait. Now turn around and take three really slow steps, kind of like ASIMO would. I am willing to bet you found the second go harder. Your body was expending much more energy fighting gravity and the movement was surely not too graceful. Although unnatural, the second type of movement is very well understood in control theory and is simple as long as you have enough power and have enough actuators to control your degrees of freedom. You are fully actuated.
 
 The idea of exploiting mechanical systems and riding dynamics prevails in nature. An albatross can fly for kilometers without flapping its wings, a rainbow trout can ride up stream currents simply using their anatomical mechanisms, and a gymnast can do backflips with relative ease.
  <div align="center">
@@ -40,7 +40,7 @@ This type of control occurs when there are less actuators than degrees of freedo
 
 "If you had more research funding, would you be working with fully actuated robotics?" Prof. Manolis Kellis famously jokes with Tedrake in an MIT staff meeting.
 
-Underactuated robotics does not come from a lack of materials (or research funding), it comes from a desire to maximize the control of our robotics at the trade-off of much more complicated control problems.
+Underactuated robotics does not come from a lack of materials (or research funding), it comes from a desire to maximize the control of our system at the trade-off of much more complicated control problem.
 
 Now that we have an intuitive idea of underactuatuation, let us go into the math.
 
@@ -63,13 +63,12 @@ I found that there were a couple of concepts that I had not been exposed to or u
 - Robotic Manipulation Equation
 - Underactuated vs. Fully-actuated mathematically
 
-This should help make sense of the [first lecture](https://www.youtube.com/watch?v=PRaSlUA78gQ&t=3609s&ab_channel=underactuateda). Know that some of my derivations might look slightly different to Prof. Tedrake. I derived Lagrange and Euler-Lagrange slightly differently in terms of structure, but the math should be equivalent. I find it helpful to look at things in different perspectives.
-
+This should help make sense of the [first lecture](https://www.youtube.com/watch?v=PRaSlUA78gQ&t=3609s&ab_channel=underactuateda). I derived Lagrange and Euler-Lagrange in a slightly different way to Prof. Tedrake, however the math is equivalent (unless you catch an error, if so email me please).
 ## Generalized Coordinates:
 Generalized coordinates are parameters used to completely describe the configuration of a system. For our purposes, generalized coordinates might refer to the angles of each join in the robot. The main advantage of generalized coordinates is that they simplify system analysis. Rather than trying to keep track of the position and orientation of every component of the robot in three-dimensional space, you can instead use a smaller number of generalized coordinates that capture the essential degrees of freedom of the system. They are also quite nice because they align with Lagrangian mechanics which will be covered shortly.
 
 ## Principle of Least Action:
-POLA, A key concept in Lagrangian and Hamiltonian mechanics, states that the path taken by a system between two states is the one for which the action is minimized. Given the kinetic and potential energy of a robot (expressed in terms of the generalized coordinates and their time derivatives), you can apply the principle of least action and the Euler-Lagrange equation to derive the equations of motion.
+POLA, A key concept in Lagrangian and Hamiltonian mechanics, states that the path taken by a system between two states is the one for which the action is minimized. In other words, a ball thrown into the air follows a parabolic trajectory because any other path requires unnecessary work. Given the kinetic and potential energy of a robot (expressed in terms of the generalized coordinates and their time derivatives), you can apply the principle of least action and the Euler-Lagrange equation to derive the equations of motion.
 
 ## Lagrangian / Euler-Lagrange Equation:
 The Lagrangian will provide us a powerful alternative to Newton's laws which are in terms of forces. It can be very difficult, if not impossible to analyze all the forces in a complex system and the Lagrangian method gives us an elegant way to simplify things,
@@ -85,7 +84,7 @@ where $\ q_i$ are our generalized coordinates.
 
 
 #### Finding equations of motion of a double pendulum using Lagrangian and Euler-Lagrange equation:
-This derivation can take about an hour if you have never done it but try doing it once and the use software to find the Lagrangian and equations of motion moving forward. I will not go through every step as that would be a LaTex nightmare but if you ever get stuck, follow along [this](https://www.youtube.com/watch?v=KSsZUn0bfwE&ab_channel=PhysicsExplained) video. 
+This derivation is quite computationally heavy, but conceptually straightforward. Tedrake mentions using software to find the values but I found peace of mind in going through this derivation since I had never done Euler-Lagrange before. I will use software moving forward because 40 minutes for a derivation that can be done in milliseconds is unreasonable. I will not go through every step as that would be a LaTex nightmare but if you ever get stuck, follow along [this](https://www.youtube.com/watch?v=KSsZUn0bfwE&ab_channel=PhysicsExplained) video. 
 
  <div align="center">
   <p>
@@ -212,7 +211,7 @@ $\ddot q = M^{-1}(q)[-C(q,\dot q) + \tau g(q) + Bu]$
 If B has full row rank, this indicates that the control inputs are able to influence the degrees of freedom independently, which indicates full actuation. If B does not have full row rank, it means that some control inputs will affect the motion in multiple degrees of freedom, indicating underactuation.
 
 ## Conclusion:
-I hope this blog post is a nice supplement to Tedrake's online lecture 1 and online textbook. If you spot an error, do not hesitate to send me an email. Keep building.
+I hope this blog post is a nice supplement to Tedrake's online lecture 1 and online textbook. This material reminds me of the Fantaisie Impromptu by Chopin. I knew it was decently above my skill level but I am stubborn person and found it too beautiful to care. I had this feeling that if I kept banging my head against the wall, the wall would eventually give, and it did. I may never play like Daniil Trifonov but I properly learned the piece, and elevated my piano playing in the process. I hope my journey with underactuated robotics is similar. Do not hesitate to send me an email if you spot an error or have questions. Keep building.
 
 
 

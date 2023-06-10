@@ -1,0 +1,93 @@
+import pygame
+import sys
+import math
+
+# Constants
+WIDTH, HEIGHT = 640, 480 # adjust sim window size
+LINEAR_SPEED = 1  
+ANGULAR_SPEED = 0.02  
+FPS = 60
+MAX_TRACERS = 70  
+DT = 1.0 / FPS  
+TWO_PI = 2 * math.pi  
+
+# Initialization
+pygame.init()
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+font = pygame.font.Font(None, 36)  
+font1 = pygame.font.Font(None, 20) 
+
+dot_position = [WIDTH // 2, HEIGHT // 2] 
+direction = 0 
+old_direction = direction  
+dot_positions = []
+
+def draw_text(screen, font, text, position, color=(255, 255, 255)):
+    render_text = font.render(text, True, color)
+    screen.blit(render_text, position)
+
+def update_position_and_direction(keys, dot_position, direction):
+    linear_vel = 0
+    if keys[pygame.K_w]:
+        dot_position[0] += LINEAR_SPEED * math.cos(direction)
+        dot_position[1] -= LINEAR_SPEED * math.sin(direction)
+        linear_vel = LINEAR_SPEED
+    if keys[pygame.K_s]:
+        dot_position[0] -= LINEAR_SPEED * math.cos(direction)
+        dot_position[1] += LINEAR_SPEED * math.sin(direction)
+        linear_vel = -LINEAR_SPEED
+    if keys[pygame.K_d]:
+        direction = (direction - ANGULAR_SPEED) % TWO_PI
+    if keys[pygame.K_a]:
+        direction = (direction + ANGULAR_SPEED) % TWO_PI
+    return dot_position, direction, linear_vel
+
+def game_loop(screen, dot_position, direction, old_direction):
+    running = True
+    while running:
+        screen.fill((0, 0, 0))  # mess with this if you want to change background color
+        draw_text(screen, font, "DDR Motion Simulator", (10, 10)) 
+        draw_text(screen, font1, "Linear velocity controls: 'W' and 'S' keys ", (10, 50))  
+        draw_text(screen, font1, "Angular controls: 'A' and 'D' keys ", (10, 70)) 
+        draw_text(screen, font1, f"Current angle (theta): {math.degrees(direction):.2f} degrees", (10, 90)) 
+
+        # event handling loop
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        # sees which keys are pressed
+        keys = pygame.key.get_pressed()
+        dot_position, direction, linear_vel = update_position_and_direction(keys, dot_position, direction)
+
+        # calculates angular velocity by taking derivative of direction
+        angular_vel = (direction - old_direction) / DT
+
+        # calculates local velocity and rounds it to two decimal places
+        local_velocity = (round(100 * linear_vel) / 100, 0, round(100 * angular_vel) / 100)
+        draw_text(screen, font1, f"Local velocity: {local_velocity}", (10, 110))
+
+        global_velocity = (round(100 * linear_vel * math.cos(direction)) / 100, round(100 * linear_vel * math.sin(direction)) / 100, round(100 * angular_vel) / 100)
+        draw_text(screen, font1, f"Global velocity: {global_velocity}", (10, 130))
+
+        dot_positions.append(list(dot_position))
+        # makes sure we do not exceed the max number of tracer dots
+        if len(dot_positions) > MAX_TRACERS:
+            dot_positions.pop(0)
+        
+        #draws yellow circle for each position of the tracers
+        for pos in dot_positions:
+            pygame.draw.circle(screen, (255, 255, 0), pos, 1)
+            
+        # draws main blue dot
+        pygame.draw.circle(screen, (0, 0, 255), dot_position, 5)
+        
+        pygame.display.flip()
+        
+        old_direction = direction
+    
+        clock.tick(FPS)
+
+    pygame.quit()
+game_loop(screen, dot_position, direction, old_direction)

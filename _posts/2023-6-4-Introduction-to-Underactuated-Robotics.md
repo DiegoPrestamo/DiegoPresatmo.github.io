@@ -211,7 +211,7 @@ $\ddot q = M^{-1}(q)[-C(q,\dot q) + \tau g(q) + Bu]$
 If B has full row rank, this indicates that the control inputs are able to influence the degrees of freedom independently, which indicates full actuation. If B does not have full row rank, it means that some control inputs will affect the motion in multiple degrees of freedom, indicating underactuation.
 
 ## Conclusion:
-I hope this blog post is a nice supplement to Tedrake's online lecture 1 and online textbook. This material reminds me of the Fantaisie Impromptu by Chopin. I knew it was somewhat above my skill level when I wanted to learn it but I am stubborn person and found it too beautiful to care. I had this feeling that if I kept banging my head against the wall, the wall would eventually give, and it did. I may never play like Daniil Trifonov but I properly learned the piece, and elevated my piano playing in the process. I hope my journey with underactuated robotics is similar. Do not hesitate to send me an email if you spot an error or have questions. Keep building.
+I hope this blog post is a nice supplement to Tedrake's online lecture 1 and online textbook. This material reminds me of the Fantaisie Impromptu by Chopin. I knew it was somewhat above my skill level when I wanted to learn it but I am stubborn person and found it too beautiful to care. I had this feeling that if I kept banging my head against the wall for long enough, the wall would eventually give, and it did. I may never play like Daniil Trifonov but I properly learned the piece, and elevated my piano playing in the process. I hope my journey with underactuated robotics is similar. Do not hesitate to send me an email if you spot an error or have questions. Keep building.
 
 
 

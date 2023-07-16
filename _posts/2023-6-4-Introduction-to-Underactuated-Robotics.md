@@ -4,7 +4,7 @@ title: Introduction Material - MIT 6.832
 tags: [Mathjax, Mathematic]
 mathjax: true
 ---
-## Underactuated 
+## Underactuated Robotics or: How I Learned to Stop Worrying and Love Dynamics
 I was emailing back and forth with a professor in my engineering school when he sent me this ominous link: [https://underactuated.csail.mit.edu/](https://underactuated.csail.mit.edu/)
 
 I was taken to Russ Tedrake's grad level MIT course: *Underactuated Robotics*. I have been fascinated by the material since and I am documenting my learning as I wish to explore my own understanding of the material. I will introduce the topic and the fundamental ideas you need to get started with the course. I felt pretty good about the math level but there were a couple of concepts I was not familiar with so this may help if you are in the same position. I will likely update this blog post if I keep finidng relevant material.

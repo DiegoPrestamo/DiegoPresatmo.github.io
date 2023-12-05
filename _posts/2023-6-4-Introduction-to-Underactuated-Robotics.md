@@ -92,7 +92,7 @@ This derivation is quite computationally heavy, but conceptually straightforward
   </p>
 </div>   
 
-The location of $\ m_1$ and $\ m_2$ is denoted by $\ p_1$ and $\ p_2$ respectively. We simply use $\ q$ = $$\ \begin{bmatrix} \ \theta_1 , \theta_2 \end{bmatrix}^T $$. We could totally work in terms of $\theta$ but getting used to generalized coordinates cannot hurt.
+The location of $\ m_1$ and $\ m_2$ is denoted by $\ p_1$ and $\ p_2$ respectively. We simply use $\ q$ = $$\ \begin{bmatrix} \ \theta_1 , \theta_2 \end{bmatrix}^T $$. We could work in terms of $\theta$ but getting used to generalized coordinates cannot hurt.
 
 $\ p_1$:
 
@@ -206,7 +206,7 @@ $M(q)\ddot q + c(q,\dot q) = \tau g(q) + Bu$
 
 in terms of $\ddot q$:
 
-$\ddot q = M^{-1}(q)[-C(q,\dot q) + \tau g(q) + Bu]$
+$\ddot q = M^{-1}(q)[-c(q,\dot q) + \tau g(q) + Bu]$
 
 If B has full row rank, this indicates that the control inputs are able to influence the degrees of freedom independently, which indicates full actuation. If B does not have full row rank, it means that some control inputs will affect the motion in multiple degrees of freedom, indicating underactuation.
 

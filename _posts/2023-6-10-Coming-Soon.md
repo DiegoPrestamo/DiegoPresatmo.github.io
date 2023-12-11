@@ -2,7 +2,7 @@
 layout: post
 title: Currently
 ---
-In the middle of my junior fall semester. Doing well in classes and coding as much as possible in C++ in my free time.
+Busy with Fall semester finals and applying to internships!
 
 <!-- OKR: Land Summer internship
 

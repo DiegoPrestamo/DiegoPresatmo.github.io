@@ -319,6 +319,12 @@ At time +8s client sent 1024 bytes to 10.1.4.2 port 11
 At time +10s client sent 1024 bytes to 10.1.5.2 port 12
 At time +12s client sent 1024 bytes to 10.1.6.2 port 13
 ```
+### Visualizing output
+Now that we have seen our output, we want to make visual sense of them. Go to your netanim directory and run ./NetAnim to start up NetAnim. Go to the file name you specified in your earlier script. Mine is 'Wireless-Anim-file.xml'. Now we will get the simulation that we saw at the beginning of this blog post:
+<div align="center">
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/901713643?h=233a11118d" width="640" height="360" frameborder="0"    allowfullscreen></iframe>>
+</div>
+We can see that we send various pings back and forth between p2p nodes and the wifi nodes in the offices. This signifies that we indeed do have a path of communication for our industrial machines to send information to our desktop machines in the office.
 
-
-
+### Conculsion 
+This was just a way for me to dip my toes into implementations of networks in and industrial context. In actuality, there are much more complex communication protocols happeining in real industrial plants. Please reach out if you have any questions or corrections. Keep building.
